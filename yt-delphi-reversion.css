@@ -1,0 +1,1238 @@
+/* ==UserStyle==
+@name         YouTube restore player UI
+@author       Ethan Pelkie
+@version      20251226-1
+@description  Bring the new YouTube Delphi UI closer to the old look while preserving its useful changes and additions
+@homepage     https://github.com/EPelk/youtube-deplhi-reversion
+@license      No License
+==/UserStyle== */
+
+
+/* BEGIN CODE - ORIGINAL CSS FROM https://userstyles.world/style/23358/youtube-restore-player-ui */
+
+/* ==UserStyle==
+@name         YouTube restore player UI
+@version      20250905.13.52
+@namespace    ?
+@description  Try to revert ytp-delhi-modern as much as possible
+@license      No License
+==/UserStyle== */
+body:has(div.html5-video-player.ytp-delhi-modern) {
+
+    #content .ytp-chrome-bottom {
+        bottom: 0;
+        height: 48px;
+        width: 100%;
+        z-index: 59;
+        padding-top: 3px;
+        text-align: left;
+        direction: ltr;
+    }
+
+    #content .ytp-progress-bar-container {
+        display: block;
+        position: absolute;
+        width: 100%;
+        bottom: 47px;
+        height: 5px;
+    }
+
+    #content .ytp-chrome-controls {
+        height: inherit;
+        font-size: 109%;
+        text-align: left;
+        direction: ltr;
+    }
+
+    #content .ytp-right-controls {
+        height: inherit;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+    }
+
+    #content .ytp-right-controls-left {
+        height: inherit;
+    }
+
+    #content .ytp-chrome-controls .ytp-play-button {
+        border-radius: 0;
+        margin-top: 0;
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+        background: transparent;
+        text-shadow: 0 0 2px #000;
+        padding: 0;
+        text-align: center;
+        height: 100%;
+    }
+
+    #content .ytp-chrome-controls .ytp-prev-button {
+        border-radius: 0;
+        margin-top: 0;
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+        background: transparent;
+        text-shadow: 0 0 2px #000;
+        padding: 0;
+        text-align: center;
+        height: 100%;
+    }
+
+    #content .ytp-chrome-controls .ytp-next-button {
+        border-radius: 0;
+        margin-top: 0;
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+        background: transparent;
+        text-shadow: 0 0 2px #000;
+        padding: 0;
+        text-align: center;
+        height: 100%;
+    }
+
+    #content .ytp-chrome-controls .ytp-volume-area {
+        border-radius: 0;
+        margin-top: 0;
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+        background: transparent;
+        text-shadow: 0 0 2px #000;
+        padding: 0;
+        text-align: center;
+        height: 100%;
+        margin-left: 0;
+    }
+
+
+    #content .ytp-chrome-controls .ytp-play-button svg {
+        padding: 0;
+        width: 24px;
+        height: 100%;
+    }
+
+    #content .ytp-time-display {
+        padding: 0;
+    }
+
+    #content .ytp-time-wrapper {
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+        background: transparent;
+    }
+
+    #content .ytp-chrome-controls .ytp-chapter-container {
+        padding-top: 0;
+    }
+
+    #content .ytp-chrome-controls .ytp-chapter-container .ytp-chapter-title {
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+        background: transparent;
+    }
+
+    #content .ytp-chrome-controls .ytp-chapter-container .ytp-chapter-title:hover::after {
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+        background: transparent;
+    }
+
+    #content .ytp-chrome-controls .ytp-prev-button:hover::after {
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+        background: transparent;
+    }
+
+    #content .ytp-chrome-controls .ytp-next-button:hover::after {
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+        background: transparent;
+    }
+
+    #content .ytp-chrome-controls .ytp-right-controls .ytp-button:hover::before {
+        background-color: transparent;
+    }
+
+    #content .ytp-play-button:hover::after {
+        background-color: transparent;
+    }
+
+    #content .ytp-volume-area:hover::after {
+        background-color: transparent;
+    }
+
+    #content .ytp-time-wrapper:not(.ytp-miniplayer-ui *):hover::after {
+        background-color: transparent;
+    }
+
+    #content .ytp-gradient-bottom {
+        display: inherit;
+    }
+
+
+    /* END CODE - ORIGINAL CSS FROM https://userstyles.world/style/23358/youtube-restore-player-ui */
+    
+    /* BEGIN CODE - MY MODIFICATIONS AND ADDITIONS */
+    
+    
+    /* Lock variables for video grid scroll position at 0 (unscrolled) and other things */
+    #content .html5-video-player > * {
+        /* Grid peek height is defined in an inline style attribute on #movie_player;
+           make sure it is overriden with !important */
+        --ytp-grid-peek-height: 0;
+        --ytp-grid-scroll-percentage: 0;
+        /*--yt-frosted-glass-backdrop-filter-override: rgba(28,28,28,0.9);*/
+        --yt-frosted-glass-backdrop-filter-override: rgba(0, 0, 0, 0);
+        --yt-spec-static-overlay-background-medium-light: rgba(28, 28, 28, 0.9);
+        --yt-spec-static-overlay-background-medium: rgba(28, 28, 28, 0.9);
+        --yt-spec-overlay-background-medium-light: rgba(28, 28, 28, 0.9);
+        --yt-spec-overlay-background-medium: rgba(28, 28, 28, 0.9);
+        --yt-delhi-bottom-controls-height: 48px;
+        --yt-delhi-big-mode-bottom-controls-height: 48px;
+        --yt-delhi-pill-height: 48px;
+        --yt-delhi-big-mode-pill-height: 48px;
+    }
+
+    /* Remove grid of suggested videos when scrolling in fullscreen */
+    #content .html5-video-player:not(.ended-mode) .ytp-fullscreen-grid {
+        display: none;
+    }
+
+    /* Override opacity/display settings associated with fullscreen video grid scrolling */
+    #content .html5-video-player:not(.ytp-autohide) > .ytp-chrome-top,
+    #content .html5-video-player.ytp-fullscreen:not(.ytp-autohide) > .ytp-gradient-top,
+    #content .html5-video-player:not(.ytp-autohide) > .ytp-chrome-bottom,
+    #content .html5-video-player:not(.ytp-autohide) > .ytp-gradient-bottom,
+    #content .html5-video-player.ytp-fullscreen-grid-active:not(.ytp-autohide) .ytp-overlays-container,
+    #content .ytp-delhi-modern.ytp-fullscreen-grid-active .caption-window.ytp-caption-window-bottom,
+
+    #content .html5-video-player.ytp-autohide.ended-mode > .ytp-chrome-top,
+    #content .html5-video-player.ytp-autohide.ytp-fullscreen.ended-mode > .ytp-gradient-top,
+    #content .html5-video-player.ytp-autohide.ended-mode > .ytp-chrome-bottom,
+    #content .html5-video-player.ytp-autohide.ended-mode > .ytp-gradient-bottom,
+    #content .html5-video-player.ytp-fullscreen.ytp-autohide.ended-mode .ytp-fullscreen-metadata,
+    #content .html5-video-player.ytp-fullscreen.ytp-autohide.ended-mode .ytp-cards-button,
+    #content .html5-video-player.ytp-fullscreen.ended-mode .ytp-overlays-container,
+    #content .html5-video-player.ytp-fullscreen.ended-mode .ytp-fullscreen-quick-actions {
+        opacity: 1;
+        display: initial;
+    }
+
+    /* Scrolling changes some elements to display: none */
+    #content .html5-video-player.ytp-fullscreen:not(.ytp-autohide) .ytp-fullscreen-metadata,
+    #content .html5-video-player.ytp-fullscreen:not(.ytp-autohide) .ytp-cards-button,
+    #content .ytp-grid-scrolling .ytp-caption-window-container,
+    #content .ytp-fullscreen-grid-active .ytp-caption-window-container,
+
+    #content .html5-video-player.ytp-fullscreen.ytp-autohide.ended-mode .ytp-fullscreen-metadata,
+    #content .html5-video-player.ytp-fullscreen.ytp-autohide.ended-mode .ytp-cards-button,
+    #content .html5-video-player.ytp-fullscreen.ended-mode .ytp-overlays-container,
+    #content .html5-video-player.ytp-fullscreen.ended-mode .ytp-fullscreen-quick-actions {
+        display: block; /* add !important to override inline styles and make the (i) button always visible
+                           (not just when there are relevant links*/
+    }
+
+    /* Hide UI when not needed */
+    #content .html5-video-player.ytp-autohide > .ytp-chrome-top,
+    #content .html5-video-player.ytp-autohide > .ytp-gradient-top,
+    #content .html5-video-player.ytp-autohide > .ytp-chrome-bottom,
+    #content .html5-video-player.ytp-autohide > .ytp-gradient-bottom {
+        opacity: 0;
+    }
+
+    /* Gradients for top and bottom of screen imported from old style */
+    #content .ytp-gradient-bottom {
+        height: 61px;
+        width: 100%;
+        padding-top: 37px;
+        bottom: 0;
+        z-index: 24;
+        background: repeat-x bottom url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==);
+    }
+
+    #content .ytp-gradient-top {
+        height: 48px;
+        width: 100%;
+        padding-bottom: 50px;
+        top: 0;
+        z-index: 25;
+        background: repeat-x top url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==);
+    }
+
+    /* Set max height of control bar to prevent button height change when seek bar is dragged up */
+    #content .ytp-chrome-bottom {
+        height: 48px;
+        pointer-events: auto;
+    }
+
+    /* Fix height of buttons */
+    #content .ytp-chrome-controls .ytp-button svg {
+        height: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    #content .ytp-delhi-modern:not(.ytp-xsmall-width-mode) .ytp-chrome-controls .ytp-subtitles-button-icon svg {
+        height: 48px;
+    }
+
+    /* Set tooltip and settings height to just above(6px) progress bar */
+    /* .ytp-tooltip-opaque: tooltip for (i) in upper-right corner */
+    #content .ytp-settings-menu,
+    #content .ytp-tooltip:not(.ytp-tooltip-progress-bar-style.ytp-preview, .ytp-tooltip-opaque) {
+        bottom: calc(var(--yt-delhi-bottom-controls-height) + 5px + 6px);
+        top: auto !important; /* Override inline style attribute */
+    }
+
+
+    /* Move tooltips down to accomodate smaller control bar */
+    /* .ytp-tooltip-opaque: tooltip for (i) in upper-right corner */
+    #content .ytp-tooltip:not(.ytp-tooltip-opaque) {
+        /*margin-top: 20px;*/
+    }
+
+    /* Adjust preview window offset from seek bar down to accomodate smaller bar */
+    #content .ytp-tooltip.ytp-preview {
+        margin-top: 20px;
+    }
+
+    /* Adjust styles for big and small display modes, mostly by negating them */
+    #content .ytp-big-mode .ytp-tooltip.ytp-preview {
+        margin-top: 84px;
+    }
+
+    #content .ytp-left-controls .ytp-mute-button .ytp-volume-icon {
+        padding: 0;
+    }
+
+    #content .ytp-big-mode {
+        min-height: inherit !important;
+    }
+
+    #content .ytp-delhi-modern.ytp-xsmall-width-mode.ytp-delhi-horizontal-volume-controls .ytp-volume-area .ytp-button {
+        vertical-align: middle;
+    }
+
+    #content .ytp-big-mode .ytp-volume-slider {
+        min-height: 36px;
+    }
+
+    #content .ytp-time-display {
+        line-height: inherit;
+    }
+
+    #content .ytp-big-mode .ytp-time-display {
+        line-height: inherit;
+    }
+
+    #content .ytp-delhi-modern.ytp-xsmall-width-mode .ytp-time-wrapper:not(.ytp-miniplayer-ui *) {
+        line-height: inherit;
+        height: inherit;
+    }
+
+    #content .ytp-big-mode {
+        line-height: 15px !important;
+        /*font-size: 13px;*/
+        font-size: 11px;
+    }
+
+    /* Progress bar in unhovered, slightly smaller state; default big mode makes the scaling smaller (.615) and translates it .5px down, putting the scrubber off center */
+    #content .ytp-big-mode .ytp-progress-bar-container:not(:hover) .ytp-progress-list {
+        transform: scaleY(.667);
+    }
+    
+    #content .ytp-big-mode.ytp-fine-scrubbing-exp .ytp-preview:not(.ytp-text-detail) .ytp-tooltip-edu svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    #content .ytp-big-mode.ytp-fine-scrubbing-exp .ytp-preview:not(.ytp-text-detail) .ytp-tooltip-edu {
+        font-size: 12px;
+    }
+
+    #content .ytp-big-mode .ytp-tooltip.ytp-preview:not(.ytp-text-detail) .ytp-tooltip-title {
+        right: 80px;
+        top: 45px;
+        height: 16px;
+    }
+
+    #content .ytp-big-mode .ytp-preview:not(.ytp-text-detail) .ytp-tooltip-bottom-text {
+        top: 45px;
+    }
+
+    #content .ytp-delhi-modern.ytp-big-mode .ytp-tooltip.ytp-tooltip-progress-bar-style .ytp-tooltip-progress-bar-pill {
+        top: 45px;
+    }
+
+    #content .ytp-big-mode .ytp-tooltip-image {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        top: 2px;
+        left: 7px;
+    }
+
+    /* YT sets seek preview background position and size in JS; it cannot be changed in
+   pure CSS without cropping out part of the image. */
+    /*#content .ytp-big-mode .ytp-tooltip-bg {
+    width: 240.366px !important;
+    height: 136px !important;
+}*/
+    /* Adjust size/position of seek button */
+    #content .ytp-delhi-modern.ytp-big-mode .ytp-scrubber-container {
+        top: -3px;
+        left: -6px;
+    }
+
+    #content .ytp-big-mode .ytp-scrubber-pull-indicator::before,
+    #content .ytp-big-mode .ytp-scrubber-pull-indicator::after {
+        width: 6.5px;
+        height: 6.5px;
+    }
+
+    /* Negate size increase in big mode */
+    #content .ytp-big-mode .ytp-scrubber-button {
+        height: 12px;
+        width: 12px;
+        border-radius: 6px;
+    }
+
+    #content .ytp-big-mode .ytp-cards-button-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Ensure the card button does not vanish when a card appears */
+    /* Default YT behavior of the (i) button is weird; forcefully making it visible eliminates
+       some odd behavior but breaks it in cases where the button should not be displayed (which cannot
+       be easily detected in CSS). */
+    /* #content .html5-video-player.ytp-fullscreen:not(.ytp-autohide) .ytp-cards-button {
+        display: block !important;
+    } */
+
+    /* Respostion card below top buttons */
+    #content .ytp-cards-teaser {
+        top: 44px;
+    }
+
+    /* Adjust card in big mode */
+    #content .ytp-cards-teaser {
+        font-size: 11px;
+    }
+
+    #content .ytp-big-mode.ytp-cards-teaser-dismissible .ytp-cards-teaser-info-icon {
+        height: 30px;
+        width: 30px;
+    }
+
+    #content .ytp-big-mode.ytp-cards-teaser-dismissible .ytp-cards-teaser-channel-avatar {
+        margin: 4px;
+    }
+
+    #content .ytp-big-mode.ytp-cards-teaser-dismissible .ytp-cards-teaser-label {
+        line-height: 30px;
+        max-width: 350px;
+    }
+
+    #content .ytp-big-mode.ytp-cards-teaser-dismissible .ytp-cards-teaser-close-button {
+        height: 30px;
+        width: 20px;
+        margin: 0 5px;
+    }
+
+    #content .ytp-big-mode.ytp-cards-teaser-shown .ytp-cards-teaser .ytp-cards-teaser-text {
+        max-width: 415px;
+    }
+
+    #content .ytp-big-mode.ytp-cards-teaser-dismissible .ytp-cards-teaser-text {
+        padding: 0 !important;
+    }
+
+    #content .ytp-big-mode.ytp-cards-teaser-dismissible .ytp-cards-teaser-text {
+        border-radius: 18px;
+    }
+
+    #content .ytp-big-mode .ytp-cards-teaser .ytp-cards-teaser-text {
+        padding: 0 36px 0 10px;
+        line-height: 31px;
+    }
+
+    #content .ytp-big-mode .ytp-cards-teaser .ytp-cards-teaser-box,
+    .ytp-big-mode .ytp-cards-teaser .ytp-cards-teaser-text {
+        height: 31px !important;
+    }
+
+    #content .ytp-big-mode.ytp-cards-teaser-shown .ytp-cards-teaser .ytp-cards-teaser-box {
+        -webkit-transform: scaleX(1) translateX(18px);
+        -ms-transform: scaleX(1) translateX(18px);
+        transform: scaleX(1) translateX(27px);
+    }
+
+    #content .ytp-big-mode .ytp-cards-teaser .ytp-cards-teaser-box {
+        right: 18px;
+    }
+
+    /* Correct caption displacement when scrolling in fullscreen */
+    #content .ytp-fullscreen-grid-peeking.ytp-big-mode:not(.ytp-autohide) .caption-window.ytp-caption-window-bottom,
+    #content .ytp-fullscreen-grid-peeking:not(.ytp-autohide) .caption-window.ytp-caption-window-bottom {
+        margin-bottom: calc(var(--yt-delhi-big-mode-bottom-controls-height) + 14px);
+    }
+
+    /* Position and style quick action buttons (like, comments, share) */
+    /* Root overlay aligned with top-right of container */
+    /* Block pointer events so card button can still be clicked */
+    #content .ytp-overlay-bottom-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        pointer-events: none;
+    }
+
+    /* Zero margins on container */
+    #content .ytp-overlay-inline-container {
+        margin: 0;
+    }
+
+    /* Block pointer events so card button can still be clicked */
+    #content .ytp-fullscreen-quick-actions {
+        margin: 0;
+        pointer-events: none;
+    }
+
+    /* Position like, comment, share buttons left of card button */
+    /* Reenable clicks on element */
+    #content yt-player-quick-action-buttons {
+        height: 36px;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+        align-items: center;
+        position: relative;
+        right: 36px;
+        pointer-events: auto;
+    }
+
+    /* Prevent buttons from vanishing when seek bar or settings menu clicked */
+    .seeking-mode .ytp-fullscreen-quick-actions,
+    .ytp-settings-shown .ytp-fullscreen-quick-actions {
+        display: block;
+    }
+
+    /* Correct colors and spacing */
+    #content yt-player-quick-action-buttons button:hover {
+        background: none;
+    }
+
+    #content yt-player-quick-action-buttons button {
+        padding: 0 24px;
+    }
+
+    /* Tooltip specifically for above buttons */
+    .ytTooltipContainerPlayerTooltipContent {
+        background-color: rgba(28, 28, 28, 0.9);
+    }
+
+    /* Recreate settings menu style from old UI */
+    /* Set radius and base font size for children to modify */
+    #content .ytp-settings-menu,
+    #content .big-mode .ytp-settings-menu {
+        font-size: 11px;
+        border-radius: 12px;
+    }
+
+    /* Only pad top and bottom of menu */
+    #content .ytp-settings-menu .ytp-panel-menu,
+    #content .big-mode .ytp-settings-menu {
+        padding: 8px 0;
+    }
+
+    /* Set menu item height, ignoring items with sliders in them (e.g. custom playback speed) */
+    #content .ytp-settings-menu .ytp-panel-menu .ytp-menuitem:not(.ytp-menuitem-with-footer),
+    #content .big-mode .ytp-settings-menu .ytp-panel-menu .ytp-menuitem:not(.ytp-menuitem-with-footer) {
+        height: 40px;
+    }
+
+    /* Menu item hover color */
+    #content .ytp-settings-menu .ytp-panel-menu .ytp-menuitem:not([aria-disabled=true]):hover,
+    #content .big-mode .ytp-settings-menu .ytp-panel-menu .ytp-menuitem:not([aria-disabled=true]):hover {
+        background-color: rgba(255, 255, 255, .1);
+    }
+
+    /* Remove rounded edges from menu items */
+    #content .ytp-settings-menu .ytp-menuitem > *,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem > * {
+        border-radius: 0;
+    }
+
+    /* Adjust padding on components within menu items */
+    /* Copied directly from old UI with light modification */
+    #content .ytp-settings-menu .ytp-menuitem-icon,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem-icon,
+    #content .ytp-settings-menu .ytp-menuitem-content,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem-content,
+    #content .ytp-settings-menu .ytp-menuitem-secondary-icon,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem-secondary-icon {
+        padding: 0 15px;
+    }
+    #content .ytp-settings-menu .ytp-menuitem-label,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem-label {
+        padding: 0 15px 0 0;
+    }
+
+    /* Padding for submenu arrow */
+    #content .ytp-settings-menu .ytp-menuitem[aria-haspopup="true"] .ytp-menuitem-content,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem[aria-haspopup="true"] .ytp-menuitem-content {
+        padding-right: 38px;
+    }
+
+    /* Set correct font size */
+    #content .ytp-settings-menu .ytp-menuitem-label,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem-label {
+        font-size: 118%;
+        font-weight: 500;
+    }
+
+    #content .ytp-settings-menu .ytp-menuitem-content,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem-content {
+        font-size: 109%;
+        text-align: right;
+    }
+
+    /* Padding around menu icons */
+    #content .ytp-settings-menu .ytp-menuitem-icon,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem-icon {
+        padding: 0 10px;
+    }
+
+    /* Shrink checkboxes to be roughly in line with old UI */
+    /* Not exactly the same since I decided to keep the new checkbox style */
+    #content .ytp-settings-menu .ytp-menuitem-toggle-checkbox,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem-toggle-checkbox {
+        height: 20px;
+        width: 33px;
+    }
+
+    /* Shrink checkbox toggle to fit new size */
+    #content .ytp-settings-menu .ytp-menuitem-toggle-checkbox::after,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem-toggle-checkbox::after {
+        width: 16px;
+        height: 16px;
+        margin-left: 2px;
+        margin-top: 2px;
+        border-radius: 8px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        background-color: var(--yt-spec-static-overlay-text-secondary, rgba(255, 255, 255, .7));
+    }
+
+    /* Make selected checkboxes have red tracks */
+    #content .ytp-settings-menu .ytp-menuitem[aria-checked=true] .ytp-menuitem-toggle-checkbox,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem[aria-checked=true] .ytp-menuitem-toggle-checkbox {
+        background-color: var(--yt-spec-red-indicator, #e1002d);
+    }
+
+    /* Smaller transform to fit smaller checkboxes, and make selected checks white instead of grey (unselected) */
+    #content .ytp-settings-menu .ytp-menuitem[aria-checked=true] .ytp-menuitem-toggle-checkbox::after,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem[aria-checked=true] .ytp-menuitem-toggle-checkbox::after {
+        -webkit-transform: translateX(13px);
+        -ms-transform: translateX(13px);
+        transform: translateX(13px);
+        background-color: rgb(255, 255, 255);
+    }
+
+    /* Padding to accomodate check mark on radio menus */
+    #content .ytp-settings-menu .ytp-menuitem[role="menuitemradio"] .ytp-menuitem-label,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem[role="menuitemradio"] .ytp-menuitem-label {
+        padding-left: 35px;
+        padding-right: 20px;
+        border-bottom: none;
+    }
+
+    /* Correct checkmark size on big mode */
+    #content .ytp-big-mode .ytp-menuitem[role=menuitemradio][aria-checked=true] .ytp-menuitem-label {
+        background-position: left 10px center;
+        background-size: 18px 18px;
+        -moz-background-size: 18px 18px;
+        -webkit-background-size: 18px 18px;
+    }
+
+    /* Ensure menu items expand to fit sliders */
+    #content .ytp-settings-menu .ytp-menuitem-with-footer,
+    #content .big-mode .ytp-settings-menu .ytp-menuitem-with-footer {
+        height: fit-content;
+    }
+
+    /* Chapter controls */
+    /* Correct margin for prev/next tooltips in big mode */
+    #content .ytp-big-mode .ytp-tooltip.ytp-text-detail.ytp-preview.ytp-bottom {
+        margin-top: 52px;
+    }
+
+    /* Remove margin to left of prev chapter button */
+    #content .ytp-prev-button {
+        margin-left: 0;
+    }
+
+    /* Slightly reduce width of prev/next buttons to be consistent with nearby buttons */
+    #content .ytp-prev-button.ytp-button,
+    #content .ytp-next-button.ytp-button {
+        width: 48px;
+    }
+
+    /* Font size of chapter text */
+    #content .ytp-big-mode .ytp-chapter-container {
+        font-size: 16px;
+    }
+
+    #content .ytp-chapter-container {
+        font-size: 14px;
+    }
+
+    /* Adjust padding on chapter arrow */
+    #content .ytp-chrome-controls .ytp-chapter-title-chevron svg,
+    #content .ytp-big-mode .ytp-chrome-controls .ytp-chapter-title-chevron svg {
+        vertical-align: middle;
+        padding: 0.1em;
+    }
+
+    /* Add separator character between time and chapter */
+    /* Technically .ytp-chapter-title-prefix still exists, but I don't know if it will be removed */
+    #content .ytp-chrome-controls .ytp-chapter-title-content::after {
+        content: "•";
+        font-size: 16px;
+        line-height: 48px;
+        position: absolute;
+        top: 0;
+        left: -3px;
+    }
+
+    /* Necessary to avoid cutting off the above dot */
+    #content .ytp-chapter-title.ytp-button,
+    #content .ytp-chapter-container {
+        overflow: visible;
+    }
+    
+    /* Remove padding and increase line height of fullscreen video title */
+    /* This brings the text in-line with the buttons on the top-right and inside the top gradient */
+    #content .ytPlayerOverlayVideoDetailsRendererHost {
+        padding: 0;
+    }
+    
+    #content .ytPlayerOverlayVideoDetailsRendererTitle.ytPlayerOverlayVideoDetailsRendererSingleLineTitle {
+        max-height: 32px;
+        line-height: 32px;
+    }
+    
+    /* Hide channel logo annotation; it displaces quick action buttons in fullscreen */
+    #content div.annotation.iv-branding {
+        display: none;
+    }
+
+    /* Adjust size of playlist button */
+    #content .ytp-big-mode .ytp-playlist-menu-button-icon,
+    #content .ytp-playlist-menu-button-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* Eliminate dark background from playlist button */
+    /* Reposition playlist button */
+    #content .ytp-big-mode .ytp-playlist-menu-button,
+    #content .ytp-playlist-menu-button {
+        background: rgba(0, 0, 0, 0);
+        margin: 0;
+        width: 48px;
+        height: 36px;
+        position: absolute;
+        top: 0;
+        right: 36px;
+    }
+
+    /* Offset quick action buttons if playlist button is present */
+    #content .ytp-overlays-container:has(.ytp-playlist-menu-button:not([style*="display: none"])) yt-player-quick-action-buttons {
+        right: 78px;
+    }
+
+    /* Configure tooltip for playlist button */
+    /* (it uses the bottom tooltip element) */
+    /*#content .html5-video-player:has(.ytp-playlist-menu-button:hover) .ytp-tooltip-text,
+#content .html5-video-player:has(.ytp-chrome-top-buttons:hover) .ytp-tooltip-text,
+#content .ytp-tooltip.ytp-bottom .ytp-tooltip-text,
+#content .ytp-tooltip.ytp-bottom .ytp-tooltip-keyboard-shortcut {
+    font-size: 13px;
+}*/
+    #content .html5-video-player:has(.ytp-playlist-menu-button:hover) .ytp-tooltip.ytp-bottom,
+    #content .html5-video-player.ytp-fullscreen:has(.ytp-chrome-top-buttons:hover) .ytp-tooltip.ytp-bottom {
+        top: 58px !important;
+        right: 24px !important;
+        left: auto !important;
+        max-width: 350px !important;
+        height: fit-content;
+    }
+
+    #content .html5-video-player:has(.ytp-chrome-top-buttons:hover) .ytp-tooltip.ytp-bottom,
+    #content .html5-video-player:has(yt-player-quick-action-buttons:hover) .ytp-tooltip.ytp-bottom {
+        transition: none;
+        /* Avoids the tooltip visibly snapping back to the bottom on mouse off */
+    }
+
+    /* Tooltip for top buttons */
+    .ytTooltipContainerDefaultTooltipContent {
+        padding: 5px 9px;
+        background: rgba(28, 28, 28, 0.9);
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+
+    #content .ytp-big-mode .ytp-tooltip {
+        line-height: 15px;
+    }
+
+    #content .ytp-tooltip-opaque .ytp-tooltip-bottom-text {
+        background-color: rgb(28, 28, 28, 0.9);
+    }
+
+    /*
+#content .ytp-tooltip-bottom-text {
+    background-color: rgb(28, 28, 28, 0.9);
+}
+*/
+    /* Tooltip and other bg colors */
+    /* Erase existing transparency, which was laid over top of text */
+    #content .ytPlayerOverlayVideoDetailsRendererHost:hover::after {
+        background-color: rgba(0, 0, 0, 0) !important;
+    }
+
+    /* Add new, darker (in line with old UI) background below text */
+    #content .ytPlayerOverlayVideoDetailsRendererHost:hover {
+        /*backdrop-filter: var(--yt-frosted-glass-backdrop-filter-override,blur(16px));*/
+        /*background: var(--yt-spec-static-overlay-background-medium-light,rgba(0,0,0,.3));*/
+        
+        /* Remove this; made obsolete by above changes that bring title text into gradient */
+        /* background: var(--yt-spec-static-overlay-background-medium-light, rgba(28, 28, 28, 0.9)); */
+        background: none;
+    }
+
+    /* Fix colors of progress bar */
+    #content .ytp-progress-list {
+        background: rgba(255, 255, 255, .2);
+    }
+
+    #content .ytp-load-progress {
+        background: rgba(255, 255, 255, .4);
+    }
+
+    #content .ytp-hover-progress {
+        background: rgba(0, 0, 0, .125);
+    }
+
+    #content .ytp-hover-progress-light {
+        background: rgba(255, 255, 255, .5);
+    }
+
+    /* Get rid of slight pink gradient on progress bar */
+    #content .ytp-play-progress {
+        background: var(--yt-spec-static-brand-red, #f03);
+    }
+
+    #content .ytp-progress-linear-live-buffer {
+        background: #c00;
+    }
+
+    /* Do same for thumbnail progress bars */
+    #content .ytThumbnailOverlayProgressBarHostWatchedProgressBar {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    #content .ytThumbnailOverlayProgressBarHostWatchedProgressBarSegment {
+        background: var(--yt-spec-static-brand-red, #f03);
+    }
+    
+    /* Make heatmap have a red stroke for visibility on light backgrounds */
+    #content .ytp-modern-heat-map {
+        stroke: var(--yt-spec-static-brand-red, #f03);
+        /* Thicken slightly and lower opacity for better blending with background */
+        opacity: 0.5;
+        stroke-width: 4px;
+    }
+    
+    /* Custom animation combining scaling of new animation with fade progression of old animation */
+    /* Keyframes cannot be applied inline; this is for reference only
+    @keyframes ytp-hybrid-fadeout {
+        0% {
+            opacity: 1;
+        }
+        
+        100% {
+            opacity: 0;
+            -webkit-transform: scale(1.33);
+            transform: scale(1.33);
+        }
+    }
+    @-webkit-keyframes ytp-hybrid-fadeout {
+        0% {
+            opacity: 1;
+        }
+        
+        100% {
+            opacity: 0;
+            -webkit-transform: scale(1.33);
+            transform: scale(1.33);
+        }
+    }
+    */
+    
+    /* Speed up play/pause animation in center of screen */
+    #content .ytp-bezel,
+    #content .ytp-bezel-text-wrapper {
+        /* Use animation from old UI style; valid as long as old animation is not deleted from codebase */
+        /* animation: ytp-bezel-fadeout .5s linear 1 normal forwards; */
+        
+        /* Shorten from 1s to 0.5s */
+        animation-duration: 0.5s;
+    }
+
+    
+    /* ----End screen---- */
+    
+    /*
+    The following code is untested with the autoplay up next UI and YouTube Mix tiles.
+    I personally disable both features, so I haven't bothered to style them here.
+    */
+    
+    /*
+    The following 2 rules can be used to hide the new endscreen and revert to the old grid,
+    which still exists in the code but is hidden by default.
+    */
+    /* Hide new endscreen grid */
+    #content .html5-video-player.ended-mode .ytp-fullscreen-grid {
+        /*display: none;*/
+    }
+    /* Restore old grid */
+    #content .html5-video-player.ended-mode .html5-endscreen {
+        /*display: block;*/
+    }
+    
+    /* Push old endscreen (and other?) content downward to accomodate top UI in fullscreen */
+    /*.ytp-autohide .ytp-player-content:not(.html5-endscreen), .ytp-autohide .ytp-player-content:not(.ytp-upnext), .ytp-hide-info-bar .ytp-player-content*/
+    #content /*.ytp-autohide*/.ytp-fullscreen .ytp-player-content:not(.ytp-upnext) {
+        top: 48px;
+    }
+    
+    /* Premiere/Livestream "beginning in" and "ended" box at bottom left */
+    /* Pin it above the progress bar, which we have made visible even when not hovered over */
+    #content .html5-video-player.ended-mode .ytp-offline-slate-bar,
+    #content .html5-video-player.unstarted-mode:not(.ytp-autohide) .ytp-offline-slate-bar {
+        bottom: 60px;
+    }
+    /* Darker color */
+    #content .ytp-offline-slate-bar {
+        background-color: rgba(28, 28, 28, 0.9);
+    }
+    /* Fix sizing and position in big mode */
+    #content .ytp-big-mode .ytp-offline-slate-bar {
+        padding: 0 6px;
+        left: 24px;
+        height: 56px;
+    }
+    #content .ytp-big-mode .ytp-offline-slate-messages {
+        min-width: 180px;
+        margin: 0 6px;
+    }
+    
+    /* Make Delphi modern video wall mimic old wall */
+    
+    /* Container for video metadata */
+    .ytp-modern-videowall-still-info {
+        /* Move from below thumbnail to inside it */
+        display: block;
+        position: absolute;
+        margin: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+    
+    /* Outer container element for tiles */
+    .ytp-modern-videowall-still {
+        display: block;
+        overflow: hidden;
+        /* Transition copied from old UI */
+        transition: transform .3s cubic-bezier(0,0,.2,1),opacity .3s cubic-bezier(0,0,.2,1),opacity .3s cubic-bezier(0,0,.2,1);
+        transition-delay: 0s, 0s, 0s, 0s;
+        /* Eliminate margin; spacing handled by CSS grid */
+        margin: 0;
+        /* Smaller corners from old UI */
+        border-radius: 4px;
+        /* Based on size of thumbnail image */
+        max-width: 480px; /* or 336px? */
+        max-height: 270px; /* or 188px? */
+        min-width: 0;
+        min-height: 0;
+        aspect-ratio: 16 / 9;
+        
+    }
+    
+    /* Thumbnail */
+    .ytp-modern-videowall-still-image {
+        border-radius: 4px;
+        /* Fill container */
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    
+    /* Title, channel, views, date */
+    .ytp-modern-videowall-still-info-content {
+        /* Mimic old UI */
+        background-image: linear-gradient(to bottom,rgba(12,12,12,.8) 0,transparent 100px);
+        transition: opacity .3s ease;
+        color: #fff;
+        /* Fill container */
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 10px;
+        right: 0;
+        top: 0;
+        /* Display:block to override default column flex box (allows children to be placed side by side/inline) */
+        display: block;
+        /* Shrink block so padding doesn't overflow container */
+        width: auto;
+        /* Hide until hover */
+        opacity: 0;
+    }
+    .ytp-modern-videowall-still-info-title:not(:empty) {
+        /* Display:block forces author, views, and date spans to next line */
+        display: block;
+        /* Mimic old UI */
+        font-size: 118%;
+        font-weight: 500;
+        line-height: 1.2;
+        max-height: 30px;
+        overflow: hidden;
+    }
+    .ytp-modern-videowall-still-info-author:not(:empty), .ytp-modern-videowall-still-view-count-and-date-info:not(:empty) {
+        /* Place these elements side-by-side below the title */
+        float: left;
+        margin-top: 2px;
+        color: #fff;
+        font-size: 100%;
+    }
+    /* Since we're moving this to the same line as the author, add a separator */
+    .ytp-modern-videowall-still-view-count-and-date-info:not(:empty)::before {
+        /* \00a0 - &nbsp; */
+        content: "\00a0• ";
+    }
+    
+    /* Box in bottom right of livestreams; mimic old UI */
+    .ytp-modern-videowall-still-info-live {
+        background: var(--yt-spec-overlay-background-brand,rgba(225,0,45,.9));
+        border-radius: 2px;
+        bottom: 10px;
+        font-weight: 500;
+        line-height: 1;
+        opacity: .9;
+        padding: 2px;
+        position: absolute;
+        right: 10px;
+        text-transform: uppercase;
+    }
+    /* Make it visible when it should be */
+    .ytp-modern-videowall-still[data-is-live=true] .ytp-modern-videowall-still-info-live {
+        display: inherit;
+    }
+    
+    /* Mimic old UI for duration box */
+    .ytp-modern-videowall-still-info-duration {
+        background: #000;
+        border-radius: 2px;
+        bottom: 10px;
+        right: 10px;
+        font-weight: 500;
+        line-height: 1;
+        opacity: 0;
+        padding: 2px;
+        position: absolute;
+        font-size: 100%;
+        transition: opacity .3s ease;
+    }
+    
+    /* Modify default shadow/highlight on hover */
+    .ytp-modern-videowall-still:hover {
+        background-color: transparent;
+        box-shadow: none; /* Get rid of shadow */
+        /*box-shadow: 0 0 0 2px var(--yt-spec-overlay-button-secondary); /* Alternatively, make it thinner */
+    }
+    
+    /* Playlist box */
+    .ytp-modern-videowall-still[data-is-list="true"] .ytp-modern-videowall-still-listlabel-regular.ytp-modern-videowall-still-listlabel {
+        position: absolute;
+        border-radius: 4px;
+        background: #000;
+        bottom: 10px;
+        left: 10px;
+        opacity: 0;
+        color: #fff;
+        height: 2.15em;
+        font-weight: 500;
+        line-height: 1.3;
+        text-transform: uppercase;
+        transition: opacity .3s ease;
+    }
+    
+    /* Make elements visible on hover */
+    .ytp-modern-videowall-still-info-content:hover {
+        opacity: 1;
+    }
+    .ytp-modern-videowall-still:has(.ytp-modern-videowall-still-info-content:hover) .ytp-modern-videowall-still-info-duration {
+        opacity: .75;
+    }
+    .ytp-modern-videowall-still[data-is-list="true"]:has(.ytp-modern-videowall-still-info-content:hover) .ytp-modern-videowall-still-listlabel-regular.ytp-modern-videowall-still-listlabel {
+        opacity: .85; /* A bit higher than old UI (.75) for visibility */
+    }
+    
+    /* Format video tile grid */
+    
+    .ytp-fullscreen-grid-active.html5-video-player.ended-mode .ytp-fullscreen-grid-main-content {
+        overflow: initial; /* Disable scrolling on outermost container */
+    }
+    
+    /*
+    Lower top edge of tile container to make room for top UI bar in fullscreen
+    (We want the tile grid centered between the top and bottom UI bars)
+    UI bar has 8px offset from top + 36px height for button container (tallest component) = 44px
+    */
+    .ytp-fullscreen-grid-active.html5-video-player.ended-mode.ytp-fullscreen .ytp-fullscreen-grid-main-content {
+        top: 44px;
+    }
+    
+    /* Setup for @container queries later */
+    /* TODO: Check behavior when livestream/premiere ended box is visible */
+    .ytp-fullscreen-grid-main-content {
+        container-name: endTileTopContainer;
+        container-type: size;
+    }
+    
+    /* Directly contains tiles; CSS grid */
+    .ytp-fullscreen-grid-active.html5-video-player.ended-mode .ytp-fullscreen-grid-stills-container {
+        display: grid;
+        /* Inset tile grid 24px within alloted space */
+        padding: 24px;
+        height: 100%;
+        /* Contain padding inside dimensions instead of growing box around padding */
+        box-sizing: border-box;
+        /* Spacing between tiles */
+        gap: 4px;
+        /* Center tiles */
+        place-items: center;
+        place-content: center;
+        /* Place tiles top to bottom, left to right */
+        grid-auto-flow: column;
+        /* Prevent container from blocking mouse hover on progress bar */
+        pointer-events: none;
+    }
+    
+    /* Prevent above pointer-events: none; from propagating to children */
+    .ytp-fullscreen-grid-active.html5-video-player.ended-mode .ytp-fullscreen-grid-stills-container > * {
+        pointer-events: auto;
+    }
+    
+    /*
+    Determine whether to use a 4x3 or 3x4 tile grid.
+    
+    Graph of the below described functions: https://www.desmos.com/calculator/omedduprjh
+    
+    (The below math ignores gaps between tiles and assumes reasonable container aspect ratios.
+    Extreme aspect ratios could cause the grid to overflow the container.
+    This occurs when the below functions have a y value (proportion of container filled) greater than 1.
+    This is corrected for in the code by swapping the limiting dimension and accepting suboptimal grid coverage
+    at extreme aspect ratios.)
+    
+    Each tile is 16 : 9.
+    The aspect ratio of a 4wide x 3tall tile grid is 16*4 : 9*3 = 64 : 27.
+    The aspect ratio of a 3wide x 4tall tile grid is 16*3 : 9*4 = 48 : 36.
+    
+    Assume the container has dimensions w by h and aspect ratio r.
+    
+    For a 4x3 grid, the limiting dimension is width; the grid is w by w / (64/27) in size.
+    The portion of the container it fills is (w/(64/27)*w)/(w*h) = (27/64)r.
+    
+    For a 3x4 grid, the limiting dimension is height; the grid is h by h * (48/36) in size (it is still longer than tall).
+    The portion of the container it fills is (h*(48/36)*h)/(w*h) = (48/36)r^-1.
+    
+    These two functions intersect near r=1.77778 with roughly 75% of the container filled.
+    */
+    @container endTileTopContainer (aspect-ratio >= 2.37037) {
+        /* Use 4x3 grid, but constrain it by height instead of width for extremely wide aspect ratios */
+        .ytp-fullscreen-grid-active.html5-video-player.ended-mode .ytp-fullscreen-grid-stills-container {
+            grid-template-columns: min-content min-content min-content min-content; /* Scale to preserve content aspect ratio */
+            grid-template-rows: 1fr 1fr 1fr;                                        /* Fill entire height */
+        }
+    }
+    @container endTileTopContainer (aspect-ratio < 2.37037) and (aspect-ratio >= 1.77778) {
+        /* Use 4x3 grid */
+        .ytp-fullscreen-grid-active.html5-video-player.ended-mode .ytp-fullscreen-grid-stills-container {
+            grid-template-columns: 1fr 1fr 1fr 1fr;                  /* Fill entire width */
+            grid-template-rows: min-content min-content min-content; /* Scale to preserve content aspect ratio */
+        }
+    }
+    @container endTileTopContainer (aspect-ratio < 1.77778) and (aspect-ratio >= 4/3) {
+        /* Use 3x4 grid */
+        .ytp-fullscreen-grid-active.html5-video-player.ended-mode .ytp-fullscreen-grid-stills-container {
+            grid-template-rows: 1fr 1fr 1fr 1fr;                        /* Fill entire height */
+            grid-template-columns: min-content min-content min-content; /* Scale to preserve content aspect ratio */
+        }
+    }
+    @container endTileTopContainer (aspect-ratio < 4/3) {
+        /* Use 3x4 grid, but constrain by width for extremely narrow aspect ratios */
+        .ytp-fullscreen-grid-active.html5-video-player.ended-mode .ytp-fullscreen-grid-stills-container {
+            grid-template-rows: min-content min-content min-content min-content; /* Scale to preserve content aspect ratio */
+            grid-template-columns: 1fr 1fr 1fr;                                  /* Fill entire width */
+        }
+    }
+
+    /* YT by default hides all but first 3 end cards. Unhide them */
+    .ytp-fullscreen-grid-active.html5-video-player.ended-mode .ytp-modern-videowall-still:nth-child(n+4) {
+        display: block;
+    }
+    
+    
+    /* Revert recommended video sidebar on right */
+    /* Replace vertical sidebar entries (i.e. massive full-width thumbnails with text below)
+       with old horizontal (small thumbnail, text to right) version */
+    /* Most styles here are simply pulled from the --horizontal version of the --vertial class */
+    /* May be obsolete; the changes this reverts appear to have been an experiment. */
+    
+    /* Replaces column direction and no set height */
+    yt-lockup-view-model.ytd-watch-next-secondary-results-renderer .yt-lockup-view-model--vertical {
+        flex-direction: row;
+        height: inherit;
+    }
+
+    /* width taken from inline style tag present in old UI */
+    yt-lockup-view-model.ytd-watch-next-secondary-results-renderer .yt-lockup-view-model--vertical > a.yt-lockup-view-model__content-image {
+        width: 168px;
+        display: flex;
+        flex: none;
+        /*padding-right: 16px; Overriden by --compact class in old UI (i.e. 8px below) */
+        justify-content: center;
+        max-width: 500px;
+        padding: 0 8px 0 0;
+    }
+
+    /* Make text fill horizontal space */
+    yt-lockup-view-model.ytd-watch-next-secondary-results-renderer .yt-lockup-view-model--vertical .yt-lockup-view-model__metadata {
+        flex: 1;
+    }
+}
