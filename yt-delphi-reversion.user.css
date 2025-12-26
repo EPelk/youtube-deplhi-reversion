@@ -1,5 +1,5 @@
 /* ==UserStyle==
-@name         YouTube restore player UI
+@name         YouTube Delphi Modern UI Reversion
 @author       Ethan Pelkie
 @version      1.0.0
 @description  Bring the new YouTube Delphi UI closer to the old look while preserving its useful changes and additions
@@ -390,9 +390,10 @@
         /* Default YT behavior of the (i) button is weird; forcefully making it visible eliminates
            some odd behavior but breaks it in cases where the button should not be displayed (which cannot
            be easily detected in CSS). */
-        /* #content .html5-video-player.ytp-fullscreen:not(.ytp-autohide) .ytp-cards-button {
+        #content .html5-video-player.ytp-fullscreen:not(.ytp-autohide) .ytp-cards-button,
+        #content .html5-video-player.ytp-fullscreen.ytp-autohide.ended-mode .ytp-cards-button {
             display: block !important;
-        } */
+        }
 
         /* Respostion card below top buttons */
         #content .ytp-cards-teaser {
