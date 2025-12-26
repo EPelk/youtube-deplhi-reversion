@@ -36,7 +36,7 @@ This stylesheet requires the [Stylus](https://add0n.com/stylus.html) extension.
 
 [![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-00adad.svg)](https://raw.githubusercontent.com/epelk/youtube-deplhi-reversion/main/yt-delphi-reversion.user.css)
 
-Alternatively, install from UserStyles.world (not yet published).
+Alternatively, [install from UserStyles.world](https://userstyles.world/style/25809/youtube-delphi-modern-ui-reversion).
 
 ## Acknowledgements
 This project was inspired by CupcakeHy's restoration project [here](https://userstyles.world/style/23358/youtube-restore-player-ui). Their code formed the early foundation of my own efforts.
