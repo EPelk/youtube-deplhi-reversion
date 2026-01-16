@@ -245,7 +245,7 @@
 
         /* Set max height of control bar to prevent button height change when seek bar is dragged up */
         #content .ytp-chrome-bottom {
-            height: 48px;
+            height: 48px !important; /* Override height in inline style attribute */
             pointer-events: auto;
         }
 
