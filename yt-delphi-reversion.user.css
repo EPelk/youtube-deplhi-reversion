@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         YouTube Delphi Modern UI Reversion
 @author       Ethan Pelkie
-@version      1.0.1
+@version      1.0.2
 @description  Bring the new YouTube Delphi UI closer to the old look while preserving its useful changes and additions
 @homepageURL  https://github.com/EPelk/youtube-deplhi-reversion
 @supportURL   https://github.com/EPelk/youtube-deplhi-reversion/issues
@@ -1216,6 +1216,24 @@
         /* Make text fill horizontal space */
         yt-lockup-view-model.ytd-watch-next-secondary-results-renderer .yt-lockup-view-model--vertical .yt-lockup-view-model__metadata {
             flex: 1;
+        }
+        
+        
+        /*
+        YouTube has changed the right sidebar to have dynamically-sized elements based on window size.
+        Preserve this behavior, but clamp the maximum size to the compact size of the previous UI.
+        */
+        /* TODO 2026-02-05: YouTube likes to experiment with and then revert styles.
+           Check styling of sidebar later in case the UI change this modifies is reverted. */
+        
+        /* Pull max width from --ytd-watch-flexy-sidebar-width in old UI */
+        div#columns > div#secondary {
+            max-width: 402px;
+        }
+        
+        /* Width of thumbnail is 55% up to 168px max taken from previous UI style */
+        yt-lockup-view-model.ytd-watch-next-secondary-results-renderer .yt-lockup-view-model--horizontal > a.yt-lockup-view-model__content-image {
+            max-width: 168px;
         }
     }
 }
