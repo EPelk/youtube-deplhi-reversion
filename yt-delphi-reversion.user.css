@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         YouTube Delphi Modern UI Reversion
 @author       Ethan Pelkie
-@version      1.0.2
+@version      1.0.3
 @description  Bring the new YouTube Delphi UI closer to the old look while preserving its useful changes and additions
 @homepageURL  https://github.com/EPelk/youtube-deplhi-reversion
 @supportURL   https://github.com/EPelk/youtube-deplhi-reversion/issues
@@ -1196,14 +1196,18 @@
         /* Most styles here are simply pulled from the --horizontal version of the --vertial class */
         /* May be obsolete; the changes this reverts appear to have been an experiment. */
 
+        /* Selector in 2nd row of each rule reflects updated structure and class names. */
+
         /* Replaces column direction and no set height */
-        yt-lockup-view-model.ytd-watch-next-secondary-results-renderer .yt-lockup-view-model--vertical {
+        yt-lockup-view-model.ytd-watch-next-secondary-results-renderer .yt-lockup-view-model--vertical,
+        ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer yt-lockup-view-model .ytLockupViewModelVertical {
             flex-direction: row;
             height: inherit;
         }
 
         /* width taken from inline style tag present in old UI */
-        yt-lockup-view-model.ytd-watch-next-secondary-results-renderer .yt-lockup-view-model--vertical > a.yt-lockup-view-model__content-image {
+        yt-lockup-view-model.ytd-watch-next-secondary-results-renderer .yt-lockup-view-model--vertical > a.yt-lockup-view-model__content-image,
+        ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer yt-lockup-view-model .ytLockupViewModelVertical > a.ytLockupViewModelContentImage {
             width: 168px;
             display: flex;
             flex: none;
@@ -1214,7 +1218,8 @@
         }
 
         /* Make text fill horizontal space */
-        yt-lockup-view-model.ytd-watch-next-secondary-results-renderer .yt-lockup-view-model--vertical .yt-lockup-view-model__metadata {
+        yt-lockup-view-model.ytd-watch-next-secondary-results-renderer .yt-lockup-view-model--vertical .yt-lockup-view-model__metadata,
+        ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer yt-lockup-view-model .ytLockupViewModelVertical > a.ytLockupViewModelMetadata {
             flex: 1;
         }
         
@@ -1232,7 +1237,9 @@
         }
         
         /* Width of thumbnail is 55% up to 168px max taken from previous UI style */
-        yt-lockup-view-model.ytd-watch-next-secondary-results-renderer .yt-lockup-view-model--horizontal > a.yt-lockup-view-model__content-image {
+        yt-lockup-view-model.ytd-watch-next-secondary-results-renderer .yt-lockup-view-model--horizontal > a.yt-lockup-view-model__content-image,
+        ytd-item-section-renderer.ytd-watch-next-secondary-results-renderer yt-lockup-view-model .ytLockupViewModelHorizontal > a.ytLockupViewModelContentImage {
+            width: 55% !important;
             max-width: 168px;
         }
     }
