@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name         YouTube Delphi Modern UI Reversion
 @author       Ethan Pelkie
-@version      1.0.3
+@version      1.0.4
 @description  Bring the new YouTube Delphi UI closer to the old look while preserving its useful changes and additions
 @homepageURL  https://github.com/EPelk/youtube-deplhi-reversion
 @supportURL   https://github.com/EPelk/youtube-deplhi-reversion/issues
@@ -159,7 +159,9 @@
 
 
         /* Lock variables for video grid scroll position at 0 (unscrolled) and other things */
-        #content .html5-video-player > * {
+        /* Video context menu exists outside ytd-app/#content/.html5-video-player elements */
+        #content .html5-video-player > *,
+        .ytp-popup.ytp-contextmenu {
             /* Grid peek height is defined in an inline style attribute on #movie_player;
                make sure it is overriden with !important */
             --ytp-grid-peek-height: 0;
@@ -170,6 +172,8 @@
             --yt-spec-static-overlay-background-medium: rgba(28, 28, 28, 0.9);
             --yt-spec-overlay-background-medium-light: rgba(28, 28, 28, 0.9);
             --yt-spec-overlay-background-medium: rgba(28, 28, 28, 0.9);
+            --yt-sys-color-baseline--overlay-background-medium: rgba(28, 28, 28, 0.9);
+            --yt-sys-color-baseline--overlay-background-medium-light: rgba(28, 28, 28, 0.9);
             --yt-delhi-bottom-controls-height: 48px;
             --yt-delhi-big-mode-bottom-controls-height: 48px;
             --yt-delhi-pill-height: 48px;
